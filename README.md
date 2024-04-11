@@ -202,3 +202,28 @@ pip install intelhex
 
 Make sure that `nrfjprog` is available from the command-line. This binary is
 part of Nordic's nRF5x Command Line Tools.
+
+### Building for the M122
+
+Create a virtual environment and install necessary tools:
+
+  python3 -m venv .venv
+  source .venv/bin/activate
+  python3 -m pip install intelhex adafruit-nrfutil
+
+Build the bootloader via:
+
+  make BOARD=m122_keyboard all
+
+Flash it:
+
+  make BOARD=m122_keyboard flash
+
+During bootloader operation, the keyboard will show up in `lsusb` as:
+
+  Adafruit M122
+
+and it exposes a flash drive named `M122KBD`. During keyboard operation
+it will show up as:
+
+  OpenMoko, Inc. IBM M122
