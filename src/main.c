@@ -168,7 +168,7 @@ int main(void) {
 
   // Save bootloader version to pre-defined register, retrieved by application
   // TODO move to CF2
-  BOOTLOADER_VERSION_REGISTER = (MK_BOOTLOADER_VERSION);
+  BOOTLOADER_VERSION_REGISTER = 0x00020A;
 
   board_init();
   bootloader_init();
@@ -226,7 +226,7 @@ static void check_dfu_mode(void) {
   _sd_inited = (gpregret == DFU_MAGIC_OTA_APPJUM);
 
   // Start Bootloader in BLE OTA mode
-  _ota_dfu = (gpregret == DFU_MAGIC_OTA_APPJUM) || (gpregret == DFU_MAGIC_OTA_RESET);
+  // _ota_dfu = (gpregret == DFU_MAGIC_OTA_APPJUM) || (gpregret == DFU_MAGIC_OTA_RESET);
 
   // Serial only mode
   bool const serial_only_dfu = (gpregret == DFU_MAGIC_SERIAL_ONLY_RESET);
@@ -250,7 +250,7 @@ static void check_dfu_mode(void) {
   dfu_start = dfu_start || button_pressed(BUTTON_DFU);
 
   // DFU + FRESET are pressed --> OTA
-  _ota_dfu = _ota_dfu || (button_pressed(BUTTON_DFU) && button_pressed(BUTTON_FRESET));
+  // _ota_dfu = _ota_dfu || (button_pressed(BUTTON_DFU) && button_pressed(BUTTON_FRESET));
 
   bool const valid_app = bootloader_app_is_valid();
   bool const just_start_app = valid_app && !dfu_start && (*dbl_reset_mem) == DFU_DBL_RESET_APP;
