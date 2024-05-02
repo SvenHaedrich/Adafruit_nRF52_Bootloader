@@ -215,9 +215,9 @@ Build the bootloader via:
 
   make BOARD=m122_keyboard all
 
-Flash it:
-
-  make BOARD=m122_keyboard flash
+Flash the hex file WITH bootloader into the chip. 
+For now that would be `_build/build-m122_keyboard/m122_keyboard_bootloader-cd6d8d9-dirty_s140_6.1.1.hex`.
+You can use some Segger tool like `JFlashLiteExe`.
 
 During bootloader operation, the keyboard will show up in `lsusb` as:
 
