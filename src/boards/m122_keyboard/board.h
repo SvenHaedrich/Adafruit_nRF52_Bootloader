@@ -58,6 +58,6 @@
 #define UF2_PRODUCT_NAME    "M122_KEYBOARD"
 #define UF2_VOLUME_LABEL    "M122KBD"
 #define UF2_BOARD_ID        "M122_KEYBOARD"
-#define UF2_INDEX_URL       "https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK"
+#define UF2_INDEX_URL       "http://www.sevenlab.de"
 
 #endif // M122_KLEYBOARD_H
