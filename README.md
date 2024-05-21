@@ -207,13 +207,17 @@ part of Nordic's nRF5x Command Line Tools.
 
 Create a virtual environment and install necessary tools:
 
+```bash
   python3 -m venv .venv
   source .venv/bin/activate
   python3 -m pip install intelhex adafruit-nrfutil
+```
 
 Build the bootloader via:
 
-  make BOARD=m122_keyboard all
+```bash
+make BOARD=m122_keyboard all
+```
 
 Flash the hex file WITH soft device to the chip. 
 For now that would be `_build/build-m122_keyboard/m122_keyboard_bootloader-cd6d8d9-dirty_s140_6.1.1.hex`.
